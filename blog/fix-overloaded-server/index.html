@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/lib/img/icon.svg">
+    <link rel="stylesheet" href="/lib/css/theme/light.css" id="themeCss">
+    <link rel="stylesheet" href="/lib/css/style.css">
+    <script>
+        (function() {
+            let theme = localStorage.getItem('theme') || 'light';
+            document.getElementById('themeCss').href = `/lib/css/theme/${theme}.css`;
+        })();
+    </script>
+    <title>Fix an overloaded server</title>
+    <meta name="description" content="How to determine a server&#39;s bottleneck, quickly fix the bottleneck, improve server performance, and prevent regressions.">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <nav class="nav">
+                <div class="nav__wrapper">
+                    <div class="nav__logo">
+                        <a href="/"><img src="/lib/img/icon.svg" alt="ParaSploit's Logo"></a>
+                    </div>
+                    <div class="nav__links">
+                        <a href="/" class="active">Home</a>
+                        <a href="/blog/">Blog</a>
+                        <a href="/code/">Code</a>
+                        <a href="/tools/">Tools</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="hero">
+            <img src="https://source.unsplash.com/yLDabpoCL3s/1200x675" alt="Photo of a server I/O">
+        </div>
+        <div class="article">
+            <div class="article__info">
+                <div class="breadcrumb">
+                    <a href="/">Home</a>
+                    <span>></span>
+                    <a href="/blog/">Blog</a>
+                </div>
+                <h1>Fix an overloaded server</h1>
+                <p>How to determine a server&#39;s bottleneck, quickly fix the bottleneck, improve server performance, and prevent regressions.</p>
+                <p class="time">Tue Apr 14 2020</p>
+            </div>
+            <h2>Assess</h2>
+            <p>When traffic overloads a server, one or more of the following can become a bottleneck: CPU, network, memory, or disk I/O. Identifying which of these is the bottleneck makes it possible to focus efforts on the most impactful mitigations.</p>
+            <ul>
+                <li>
+                    <p>CPU: CPU usage that is consistently over 80% should be investigated and fixed. Server performance often degrades once CPU usage reaches ~80-90%, and becomes more pronounced as usuage gets closer to 100%. The CPU utilization of serving a single request is negligible, but doing this at the scale encountered during traffic spikes can sometimes overwhelm a server. Offloading serving to other infrastructure, reducing expensive operations, and limiting the quantity of requests will reduce CPU utilization.</p>
+                </li>
+                <li>
+                    <p>Network: During periods of high traffic, the network throughput required to fulfill user requests can exceed capacity. Some sites, depending on the hosting provider, may also hit caps regarding cumulative data transfer. Reducing the size and quantity of data transferred to and from the server will remove this bottleneck.</p>
+                </li>
+                <li>
+                    <p>Memory: When a system doesn&#39;t have enough memory, data has to be offloaded to disk for storage. Disk is considerably slower to access than memory, and this can slow down an entire application. If memory becomes completely exhausted, it can result in Out of Memory (OOM) errors. Adjusting memory allocation, fixing memory leaks, and upgrading memory can remove this bottleneck.</p>
+                </li>
+                <li>
+                    <p>Disk I/O: The rate at which data can be read or written from disk is constrained by the disk itself. If disk I/O is a bottleneck, increasing the amount of data cached in memory can alleviate this issue (at the cost of increased memory utilization). If this doesn&#39;t work, it may be necessary to upgrade your disks.</p>
+                </li>
+            </ul>
+            <p>The techniques in this guide focus on addressing CPU and network bottlenecks. For most sites, CPU and network will be the most relevant bottlenecks during a traffic spike.</p>
+            <p>Running top on the affected server is a good starting place for investigating bottlenecks. If available, supplement this with historical data from your hosting provider or monitoring tooling.</p>
+            <h2>Stabilize</h2>
+            <p>An overloaded server can quickly lead to cascading failures elsewhere in the system. Thus, it&#39;s important to stabilize the server before attempting to make more significant changes.</p>
+            <h3>Rate Limiting</h3>
+            <p>Rate limiting protects infrastructure by limiting the number of incoming requests. This is increasingly important as server performance degrades: as response times increase, users tend to aggressively refresh the page - increasing the server load even further.</p>
+            <h4>Fix</h4>
+            <p>Although rejecting a request is relatively inexpensive, the best way to protect your server is to handle rate limiting somewhere upstream from it - for instance, via a load balancer, reverse proxy, or CDN.</p>
+
+        </div>
+        <footer>
+            <div class="seperator"></div>
+            <div class="container">
+                <div class="footer__row">
+                    <a class="footer__col" href="/">
+                        <img src="/lib/img/icon.svg" alt="ParaSploit's Icon">
+                        <span>ParaSploit.com</span>
+                    </a>
+                    <div class="footer__col">
+                        side
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/lib/js/script.js"></script>
+
+</body>
+
+</html>

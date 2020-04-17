@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/lib/img/icon.svg">
+    <link rel="stylesheet" href="/lib/css/theme/light.css" id="themeCss">
+    <link rel="stylesheet" href="/lib/css/style.css">
+    <script>
+        (function() {
+            let theme = localStorage.getItem('theme') || 'light';
+            document.getElementById('themeCss').href = `/lib/css/theme/${theme}.css`;
+        })();
+    </script>
+    <title>Digging into the Privacy Sandbox</title>
+    <meta name="description" content="The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms.">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <nav class="nav">
+                <div class="nav__wrapper">
+                    <div class="nav__logo">
+                        <a href="/"><img src="/lib/img/icon.svg" alt="ParaSploit's Logo"></a>
+                    </div>
+                    <div class="nav__links">
+                        <a href="/" class="active">Home</a>
+                        <a href="/blog/">Blog</a>
+                        <a href="/code/">Code</a>
+                        <a href="/tools/">Tools</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="hero">
+            <img src="https://source.unsplash.com/m_HRfLhgABo/400x225/" alt="Digging into the Privacy Sandbox">
+        </div>
+        <div class="article">
+            <div class="article__info">
+                <div class="breadcrumb">
+                    <a href="/">Home</a>
+                    <span>></span>
+                    <a href="/code/">Code</a>
+                </div>
+                <h1>Digging into the Privacy Sandbox</h1>
+                <p>The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms.</p>
+                <p class="time">Tue Apr 14 2020</p>
+            </div>
+            <h2>Why does the web use third-party code?</h2>
+            <p>Websites use services from other companies to provide analytics, serve video and do lots of other useful stuff. Composability is one of the web&#39;s superpowers.</p>
+            <p>Most notably, ads are included in web pages via third-party JavaScript and iframes. Ad views, clicks and conversions are tracked via third-party cookies and scripts. That&#39;s how most of the web is funded.</p>
+            <p>Relevant ads are less annoying to users and more profitable for publishers (the people running ad-supported websites). Third party ad targeting tools make ad space more valuable to advertisers (the people who purchase ad space on websites) which in turn increases revenue for ad-supported websites and enables content to get created and published.</p>
+            <p>Reliable measurement and anti-fraud protection are also crucial. Advertisers and site owners must be able to distinguish between malicious bots and trustworthy humans. If advertisers can&#39;t reliably tell which ad clicks are from real humans, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as device fingerprinting to combat fraud.</p>
+            <p>The problem is… privacy.</p>
+            <h2>The current state of privacy on the web</h2>
+            <p>When you visit a website you may not be aware of the third parties involved and what they&#39;re doing with your data. Even publishers and web developers may not understand the entire third-party supply chain.</p>
+            <p>Ad targeting, conversion measurement, and other use cases currently rely on establishing stable cross-site identity. Historically this has been done by using third-party cookies, but browsers have begun to restrict access to these cookies. There&#39;s been an increase in the use of other mechanisms for cross-site user tracking, such as covert browser storage, device fingerprinting, and requests for personal information like email addresses.</p>
+            <p>This is a dilemma for the web. How can legitimate third-party use cases be supported without enabling users to be tracked across sites?</p>
+            <p>In particular, how can websites fund content by enabling third parties to show ads and measure ad performance—but not allow individual users to be profiled? How can advertisers verify real users, and site owners check that users are trustworthy, without resorting to dark patterns such as device fingerprinting?</p>
+            <p>The way things work at the moment can be problematic for everyone concerned, not just users. For publishers and advertisers, tracking identity and using a variety of non-native, un-standardised third-party solutions can add to technical debt, code complexity and data risk. Users, developers, publishers, and advertisers shouldn&#39;t have to worry.</p>
+            <h2>Introducing the Privacy Sandbox</h2>
+            <p>The Privacy Sandbox introduces a set of privacy-preserving APIs to accomplish tasks that use tracking today.</p>
+            <p>The Privacy Sandbox APIs require web browsers to take on a new role. Rather than working with limited tools and protections, the APIs enable the user&#39;s browser to act on the user&#39;s behalf to ensure that data is never shared without their knowledge and consent. The APIs enable use cases such as ad targeting and conversion measurement, but without revealing individual private and personal information.</p>
+            <p>This is a shift in direction for browsers. The Privacy Sandbox authors&#39; vision of the future has browsers providing specific tools to target specific use cases, while preserving user privacy.</p>
+            <h2>The Privacy Sandbox proposals</h2>
+            <p>In order to successfully transition away from third-party cookies the Privacy Sandbox authors need your support. The proposal explainers need feedback from developers as well as publishers, advertisers, and advertising platforms, to suggest missing use cases and more-private ways to accomplish their goals.</p>
+
+        </div>
+        <footer>
+            <div class="seperator"></div>
+            <div class="container">
+                <div class="footer__row">
+                    <a class="footer__col" href="/">
+                        <img src="/lib/img/icon.svg" alt="ParaSploit's Icon">
+                        <span>ParaSploit.com</span>
+                    </a>
+                    <div class="footer__col">
+                        side
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/lib/js/script.js"></script>
+
+</body>
+
+</html>

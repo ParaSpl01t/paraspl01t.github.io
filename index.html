@@ -4,37 +4,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/lib/img/icon.svg">
+    <link rel="stylesheet" href="/lib/css/theme/light.css" id="themeCss">
     <link rel="stylesheet" href="/lib/css/style.css">
+    <script>
+        (function() {
+            let theme = localStorage.getItem('theme') || 'light';
+            document.getElementById('themeCss').href = `/lib/css/theme/${theme}.css`;
+        })();
+    </script>
     <title>Homepage</title>
+    <meta name="description" content="A place to learn about tech, web and linux.">
 </head>
 
 <body>
     <div id="app">
+        <header>
+            <nav class="nav">
+                <div class="nav__wrapper">
+                    <div class="nav__logo">
+                        <a href="/"><img src="/lib/img/icon.svg" alt="ParaSploit's Logo"></a>
+                    </div>
+                    <div class="nav__links">
+                        <a href="/" class="active">Home</a>
+                        <a href="/blog/">Blog</a>
+                        <a href="/code/">Code</a>
+                        <a href="/tools/">Tools</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="home-hero container">
+            <div>
+                <h2>Tech, Web <span style="color:var(--accent)">&</span> Linux</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti impedit optio iure sequi similique, modi placeat facere accusantium illo sed?</p>
+            </div>
+        </div>
+        <div class="container container--big">
 
-        <h1>Blog</h1>
+            <h1>Blog</h1>
+            <div class="row">
 
-        <a href="/blog/sixth-post/">sixth post</a>
+                <div class="col">
+                    <a class="card" href="/blog/test-markdown-elements/">
+                        <div class="card__image">
+                            <img src="https://source.unsplash.com/6JVlSdgMacE/400x225" alt="Image of CSS code">
+                        </div>
+                        <div class="card__content">
+                            <h3>Test page for markdown elements</h3>
+                            <p>View rendered styles for markdown elements and test CSS</p>
+                        </div>
+                    </a>
+                </div>
 
-        <a href="/blog/blog-five/">blog five</a>
+                <div class="col">
+                    <a class="card" href="/blog/fix-overloaded-server/">
+                        <div class="card__image">
+                            <img src="https://source.unsplash.com/yLDabpoCL3s/400x225" alt="Photo of a server I/O">
+                        </div>
+                        <div class="card__content">
+                            <h3>Fix an overloaded server</h3>
+                            <p>How to determine a server&#39;s bottleneck, quickly fix the bottleneck, improve server performance, and prevent regressions.</p>
+                        </div>
+                    </a>
+                </div>
 
-        <a href="/blog/fourth/">fourth</a>
+                <div class="col">
+                    <a class="card" href="/blog/digging-into-privacy-sandbox/">
+                        <div class="card__image">
+                            <img src="https://source.unsplash.com/ah-HeguOe9k/400x225" alt="Digging into the Privacy Sandbox">
+                        </div>
+                        <div class="card__content">
+                            <h3>Digging into the Privacy Sandbox</h3>
+                            <p>The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms.</p>
+                        </div>
+                    </a>
+                </div>
 
-        <br>
-        <a href="/blog/">Read More</a>
+            </div>
+            <a href="/blog/">View More</a>
 
-        <h1>Code</h1>
+            <h1>Code</h1>
+            <div class="row">
 
-        <a href="/code/sixth-post/">sixth post</a>
+                <div class="col">
+                    <a class="card" href="/code/digging-into-privacy-sandbox/">
+                        <div class="card__image">
+                            <img src="https://source.unsplash.com/m_HRfLhgABo/400x225/" alt="Digging into the Privacy Sandbox">
+                        </div>
+                        <div class="card__content">
+                            <h3>Digging into the Privacy Sandbox</h3>
+                            <p>The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms.</p>
+                        </div>
+                    </a>
+                </div>
 
-        <a href="/code/blog-five/">blog five</a>
+            </div>
+            <a href="/code/">View More</a>
 
-        <a href="/code/fourth/">fourth</a>
-
-        <br>
-        <a href="/code/">Read More</a>
-
+        </div>
+        <footer>
+            <div class="seperator"></div>
+            <div class="container">
+                <div class="footer__row">
+                    <a class="footer__col" href="/">
+                        <img src="/lib/img/icon.svg" alt="ParaSploit's Icon">
+                        <span>ParaSploit.com</span>
+                    </a>
+                    <div class="footer__col">
+                        side
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-
     <script src="/lib/js/script.js"></script>
 </body>
 
