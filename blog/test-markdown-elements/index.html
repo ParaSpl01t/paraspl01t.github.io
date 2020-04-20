@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/lib/img/icon.svg">
-    <link rel="stylesheet" href="/lib/css/theme/light.css" id="themeCss">
     <link rel="stylesheet" href="/lib/css/style.css">
     <script>
         (function() {
             let theme = localStorage.getItem('theme') || 'light';
-            document.getElementById('themeCss').href = `/lib/css/theme/${theme}.css`;
+            document.documentElement.className = "theme-" + theme;
         })();
     </script>
     <title>Test page for markdown elements</title>

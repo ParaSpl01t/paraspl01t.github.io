@@ -1,5 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Sen:400,700&display=swap");
 
+.theme-light {
+	--bg: #fffffe;
+	--text: #2b2c34;
+	--text-alt: #504f56;
+	--accent: #6246ea;
+	--accent-dark: #4b31c8;
+}
+
+.theme-dark {
+	--bg: #16161a;
+	--text: #fffffe;
+	--text-alt: #94a1b2;
+	--accent: #6246ea;
+	--accent-dark: #4b31c8;
+}
+
 ::-webkit-scrollbar {
 	width: 12px;
 }
@@ -289,7 +305,8 @@ a.card {
 .article__info>p {
 	margin: 0 0 16px 0;
 }
-.article__info > .time{
+
+.article__info>.time {
 	font-size: 16px;
 	color: var(--text-alt);
 }
