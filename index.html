@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="/lib/css/style.css">
     <script>
         (function() {
-            let theme = localStorage.getItem('theme') || 'light';
-            document.documentElement.className = "theme-" + theme;
+            document.documentElement.className = 'theme-' + (localStorage.getItem('theme') || 'light');
         })();
     </script>
     <title>Homepage</title>
@@ -81,7 +80,7 @@
                 </div>
 
             </div>
-            <a href="/blog/">View More</a>
+            <a class="btn" href="/blog/">View More</a>
 
             <h1>Code</h1>
             <div class="row">
@@ -99,7 +98,7 @@
                 </div>
 
             </div>
-            <a href="/code/">View More</a>
+            <a class="btn" href="/code/">View More</a>
 
         </div>
         <footer>
@@ -111,7 +110,7 @@
                         <span>ParaSploit.com</span>
                     </a>
                     <div class="footer__col">
-                        side
+                        <button class="btn" onclick="app.toggleTheme()">Toggle Theme</button>
                     </div>
                 </div>
             </div>

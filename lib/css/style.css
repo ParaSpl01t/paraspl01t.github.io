@@ -5,6 +5,7 @@
 	--bg-alt: #fffffe;
 	--text: #2b2c34;
 	--text-alt: #504f56;
+	--btn-text: #fffffe;
 	--accent: #6246ea;
 	--accent-dark: #4b31c8;
 }
@@ -14,6 +15,7 @@
 	--bg-alt: #1d1d21;
 	--text: #fffffe;
 	--text-alt: #94a1b2;
+	--btn-text: #fffffe;
 	--accent: #6246ea;
 	--accent-dark: #4b31c8;
 }
@@ -48,7 +50,7 @@ html {
 html,
 body {
 	margin: 0;
-	height: 100%;
+	min-height: 100%;
 	line-height: 1.5;
 	font-size: 19px;
 	font-family: "Sen", sans-serif;
@@ -57,7 +59,7 @@ body {
 #app {
 	position: relative;
 	padding-top: 48px;
-	min-height: 100%;
+	height: 100%;
 	color: var(--text);
 	background-color: var(--bg);
 	transition: padding 0.2s;
@@ -177,6 +179,7 @@ code {
 
 .nav__wrapper {
 	max-width: 1320px;
+	height: inherit;
 	margin: 0 auto;
 	justify-content: space-between;
 	display: flex;
@@ -196,6 +199,7 @@ code {
 	font-weight: 700;
 	font-size: 15px;
 	padding: 0 16px;
+	vertical-align: top;
 }
 
 .nav__logo>a>img {
@@ -206,7 +210,7 @@ code {
 }
 
 .nav__links>a.active {
-	box-shadow: 0 -2px 0 var(--accent) inset;
+	border-bottom: 2px solid var(--accent);
 }
 
 .nav__links>a:hover {
@@ -248,7 +252,6 @@ code {
 .card>.card__image>img {
 	object-fit: cover;
 	width: 100%;
-	transition: transform 0.2s;
 }
 
 .card>.card__content {
@@ -265,10 +268,6 @@ code {
 	transform: translateY(-4px);
 }
 
-.card:hover>.card__image>img {
-	transform: scale(1.01);
-}
-
 a.card {
 	text-decoration: inherit;
 	color: inherit;
@@ -277,6 +276,30 @@ a.card {
 .col>.card {
 	max-width: 700px;
 	margin: 0 auto;
+}
+
+/* buttons */
+
+.btn {
+	display: inline-block;
+	height: 48px;
+	text-decoration: none;
+	border: 0;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: 700;
+	border-radius: 3px;
+	line-height: 48px;
+	padding: 0 16px;
+	color: var(--btn-text);
+	background-color: var(--accent);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.btn:hover {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	transform: translateY(-2px);
 }
 
 /* blog post */
@@ -331,6 +354,8 @@ a.card {
 /* footer */
 footer {
 	padding: 64px 0;
+	margin: 32px 0 0 0;
+	background-color: var(--bg-alt);
 }
 
 .footer__row {

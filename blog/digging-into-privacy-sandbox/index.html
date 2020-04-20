@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="/lib/css/style.css">
     <script>
         (function() {
-            let theme = localStorage.getItem('theme') || 'light';
-            document.documentElement.className = "theme-" + theme;
+            document.documentElement.className = 'theme-' + (localStorage.getItem('theme') || 'light');
         })();
     </script>
     <title>Digging into the Privacy Sandbox</title>
@@ -71,7 +70,7 @@
                         <span>ParaSploit.com</span>
                     </a>
                     <div class="footer__col">
-                        side
+                        <button class="btn" onclick="app.toggleTheme()">Toggle Theme</button>
                     </div>
                 </div>
             </div>
