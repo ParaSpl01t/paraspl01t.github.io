@@ -2,6 +2,7 @@
 
 .theme-light {
 	--bg: #fffffe;
+	--bg-alt: #fffffe;
 	--text: #2b2c34;
 	--text-alt: #504f56;
 	--accent: #6246ea;
@@ -10,6 +11,7 @@
 
 .theme-dark {
 	--bg: #16161a;
+	--bg-alt: #1d1d21;
 	--text: #fffffe;
 	--text-alt: #94a1b2;
 	--accent: #6246ea;
@@ -229,6 +231,7 @@ code {
 
 .card {
 	display: block;
+	background-color: var(--bg-alt);
 	flex-grow: 1;
 	border-radius: 8px;
 	overflow: hidden;
