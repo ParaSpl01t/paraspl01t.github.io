@@ -16,21 +16,22 @@
 
 <body>
     <div id="app">
-        <header>
-            <nav class="nav">
-                <div class="nav__wrapper">
-                    <div class="nav__logo">
-                        <a href="/"><img src="/lib/img/icon.svg" alt="ParaSploit's Logo"></a>
-                    </div>
-                    <div class="nav__links">
-                        <a href="/" class="active">Home</a>
-                        <a href="/blog/">Blog</a>
-                        <a href="/code/">Code</a>
-                        <a href="/tools/">Tools</a>
-                    </div>
+        <nav class="nav">
+            <div class="nav__wrapper">
+                <div class="nav__logo">
+                    <a href="/"><img src="/lib/img/icon.svg" alt="ParaSploit's Logo"></a>
                 </div>
-            </nav>
-        </header>
+                <div class="nav__hamburger">
+                    ☰
+                </div>
+                <div class="nav__links">
+                    <a href="/">Home</a>
+                    <a href="/blog/">Blog</a>
+                    <a class="active" href="/code/">Code</a>
+                    <a href="/tools/">Tools</a>
+                </div>
+            </div>
+        </nav>
         <div class="container container--big">
             <div class="row">
 
@@ -48,8 +49,33 @@
 
             </div>
         </div>
-        <a href="/code/">1</a>
+        <div class="pagination">
 
+            <a class="active" href="/code/">1</a>
+
+
+            <br>
+
+
+            <form id="gotoForm">
+                <label for="goto">Go to Page : </label>
+                <input type="hidden" value="1">
+                <input type="text" name="goto" id="goto">
+            </form>
+            <script>
+                document.getElementById('gotoForm').addEventListener('submit', e => {
+                    let gotoValue = parseInt(document.getElementById('goto').value)
+                    e.preventDefault();
+                    if (gotoValue > 0 && gotoValue <= parseInt('1')) {
+                        if (gotoValue === 1)
+                            location.href = '/code/'
+                        else
+                            location.href = `/code/page/${gotoValue}`;
+                    }
+                })
+            </script>
+
+        </div>
         <footer>
             <div class="seperator"></div>
             <div class="container">

@@ -17,21 +17,22 @@
 
 <body>
     <div id="app">
-        <header>
-            <nav class="nav">
-                <div class="nav__wrapper">
-                    <div class="nav__logo">
-                        <a href="/"><img src="/lib/img/icon.svg" alt="ParaSploit's Logo"></a>
-                    </div>
-                    <div class="nav__links">
-                        <a href="/" class="active">Home</a>
-                        <a href="/blog/">Blog</a>
-                        <a href="/code/">Code</a>
-                        <a href="/tools/">Tools</a>
-                    </div>
+        <nav class="nav">
+            <div class="nav__wrapper">
+                <div class="nav__logo">
+                    <a href="/"><img src="/lib/img/icon.svg" alt="ParaSploit's Logo"></a>
                 </div>
-            </nav>
-        </header>
+                <div class="nav__hamburger">
+                    ☰
+                </div>
+                <div class="nav__links">
+                    <a href="/">Home</a>
+                    <a href="/blog/">Blog</a>
+                    <a href="/code/">Code</a>
+                    <a href="/tools/">Tools</a>
+                </div>
+            </div>
+        </nav>
         <div class="hero">
             <img src="https://source.unsplash.com/yLDabpoCL3s/1200x675" alt="Photo of a server I/O">
         </div>
@@ -46,7 +47,7 @@
                 <p>How to determine a server&#39;s bottleneck, quickly fix the bottleneck, improve server performance, and prevent regressions.</p>
                 <p class="time">Tue Apr 14 2020</p>
             </div>
-            <h2>Assess</h2>
+            <h2>Assets</h2>
             <p>When traffic overloads a server, one or more of the following can become a bottleneck: CPU, network, memory, or disk I/O. Identifying which of these is the bottleneck makes it possible to focus efforts on the most impactful mitigations.</p>
             <ul>
                 <li>
