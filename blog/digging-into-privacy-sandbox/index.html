@@ -98,11 +98,12 @@
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             if (navigator.share) {
+                document.getElementById('share').style.display = 'inline-block';
                 document.getElementById('share').addEventListener('click', () => {
                     navigator.share({
-                            title: 'web.dev',
-                            text: 'Check out web.dev.',
-                            url: 'https://web.dev/',
+                            title: 'ParaSploit',
+                            text: 'Check out this article.',
+                            url: document.location.href
                         })
                         .then(() => console.log('Successful share'))
                         .catch((error) => console.log('Error sharing', error));
