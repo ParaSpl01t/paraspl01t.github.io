@@ -360,22 +360,6 @@ a.card {
 	background-color: var(--pagination-active-bg);
 }
 
-.pagination form {
-	display: inline-block;
-}
-
-.pagination input {
-	display: inline-block;
-	width: var(--linkWidth);
-	height: var(--linkWidth);
-	line-height: var(--linkWidth);
-	border-radius: calc(var(--linkWidth) / 2);
-	border: 0;
-	color: var(--text);
-	background-color: var(--pagination-active-bg);
-	outline: 0;
-	text-align: center;
-}
 
 /* blog post */
 .hero {

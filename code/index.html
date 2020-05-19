@@ -11,7 +11,8 @@
             document.documentElement.className = 'theme-' + (localStorage.getItem('theme') || 'light');
         })();
     </script>
-    <title>pagination</title>
+    <title>Code</title>
+
 </head>
 
 <body>
@@ -51,30 +52,11 @@
         </div>
         <div class="pagination">
 
-            <a class="active" href="/code/">1</a>
-
+            <span>
+                page 1 of 1
+            </span>
 
             <br>
-
-
-            <form id="gotoForm">
-                <label for="goto">Go to Page : </label>
-                <input type="hidden" value="1">
-                <input type="text" name="goto" id="goto">
-            </form>
-            <script>
-                document.getElementById('gotoForm').addEventListener('submit', e => {
-                    let gotoValue = parseInt(document.getElementById('goto').value)
-                    e.preventDefault();
-                    if (gotoValue > 0 && gotoValue <= parseInt('1')) {
-                        if (gotoValue === 1)
-                            location.href = '/code/'
-                        else
-                            location.href = `/code/page/${gotoValue}`;
-                    }
-                })
-            </script>
-
         </div>
         <footer>
             <div class="seperator"></div>

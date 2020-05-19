@@ -11,7 +11,8 @@
             document.documentElement.className = 'theme-' + (localStorage.getItem('theme') || 'light');
         })();
     </script>
-    <title>pagination</title>
+    <title>Blog</title>
+
 </head>
 
 <body>
@@ -34,18 +35,6 @@
         </nav>
         <div class="container container--big">
             <div class="row">
-
-                <div class="col">
-                    <a href="/blog/digging-into-privacy-sandbox/"" class=" card">
-                        <div class="card__image">
-                            <img src="https://source.unsplash.com/ah-HeguOe9k/400x225" alt="Digging into the Privacy Sandbox">
-                        </div>
-                        <div class="card__content">
-                            <h3>Digging into the Privacy Sandbox</h3>
-                            <p>The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms.</p>
-                        </div>
-                    </a>
-                </div>
 
                 <div class="col">
                     <a href="/blog/test-markdown-elements/"" class=" card">
@@ -71,34 +60,27 @@
                     </a>
                 </div>
 
+                <div class="col">
+                    <a href="/blog/digging-into-privacy-sandbox/"" class=" card">
+                        <div class="card__image">
+                            <img src="https://source.unsplash.com/ah-HeguOe9k/400x225" alt="Digging into the Privacy Sandbox">
+                        </div>
+                        <div class="card__content">
+                            <h3>Digging into the Privacy Sandbox</h3>
+                            <p>The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms.</p>
+                        </div>
+                    </a>
+                </div>
+
             </div>
         </div>
         <div class="pagination">
 
-            <a class="active" href="/blog/">1</a>
-
+            <span>
+                page 1 of 1
+            </span>
 
             <br>
-
-
-            <form id="gotoForm">
-                <label for="goto">Go to Page : </label>
-                <input type="hidden" value="1">
-                <input type="text" name="goto" id="goto">
-            </form>
-            <script>
-                document.getElementById('gotoForm').addEventListener('submit', e => {
-                    let gotoValue = parseInt(document.getElementById('goto').value)
-                    e.preventDefault();
-                    if (gotoValue > 0 && gotoValue <= parseInt('1')) {
-                        if (gotoValue === 1)
-                            location.href = '/blog/'
-                        else
-                            location.href = `/blog/page/${gotoValue}`;
-                    }
-                })
-            </script>
-
         </div>
         <footer>
             <div class="seperator"></div>

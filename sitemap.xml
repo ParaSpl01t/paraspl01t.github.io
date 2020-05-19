@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://127.0.0.1/blog/test-markdown-elements/</loc>
+        <lastmod>2020-05-19T17:43:15+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://127.0.0.1/blog/fix-overloaded-server/</loc>
+        <lastmod>2020-05-19T17:43:04+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://127.0.0.1/blog/digging-into-privacy-sandbox/</loc>
+        <lastmod>2020-05-19T17:42:52+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://127.0.0.1/code/digging-into-privacy-sandbox/</loc>
+        <lastmod>2020-05-19T17:43:28+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://127.0.0.1/</loc>
+        <lastmod>2020-05-19T17:43:28+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://127.0.0.1/blog/</loc>
+        <lastmod>2020-05-19T17:43:28+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://127.0.0.1/code/</loc>
+        <lastmod>2020-05-19T17:43:28+05:30</lastmod>
+    </url>
+</urlset>
