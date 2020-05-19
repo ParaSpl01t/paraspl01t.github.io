@@ -88,14 +88,33 @@
                         <span>ParaSploit.com</span>
                     </a>
                     <div class="footer__col right">
-                        <button class="btn" onclick="app.toggleTheme()">Toggle Theme</button>
+                        <div>
+                            <button class="btn" onclick="app.toggleTheme()">Toggle Theme</button>
+                            <br>
+                            <br>
+                            <button class="btn" id="share">Share</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
     <script src="/lib/js/script.js"></script>
-
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            if (navigator.share) {
+                document.getElementById('share').addEventListener('click', () => {
+                    navigator.share({
+                            title: 'web.dev',
+                            text: 'Check out web.dev.',
+                            url: 'https://web.dev/',
+                        })
+                        .then(() => console.log('Successful share'))
+                        .catch((error) => console.log('Error sharing', error));
+                })
+            }
+        })
+    </script>
 </body>
 
 </html>
